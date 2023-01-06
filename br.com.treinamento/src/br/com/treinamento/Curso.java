@@ -3,6 +3,7 @@ package br.com.treinamento;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class Curso {
 	private String nome;
@@ -25,9 +26,18 @@ public class Curso {
 	public List<Aula> getAulas() {
 		return Collections.unmodifiableList(this.aulas);
 	}
+	
+	public int getTempoTotal() {
+		return this.aulas.stream().mapToInt(Aula::getTempo).sum();
+	}
 
 	public void adicionaAula(Aula aula) {
 		this.aulas.add(aula);
+	}
+	
+	@Override
+	public String toString() {
+		return "[Curso: " + nome + " , tempo total: " + this.getTempoTotal() + ", aulas: " + aulas ;
 	}
 
 }
