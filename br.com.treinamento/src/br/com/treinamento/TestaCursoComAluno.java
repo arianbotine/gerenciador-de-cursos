@@ -1,6 +1,7 @@
 package br.com.treinamento;
 
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.Set;
 
 public class TestaCursoComAluno {
@@ -23,10 +24,18 @@ public class TestaCursoComAluno {
 		/*
 		 * alunos.add(aluno4);
 		 */
-
+		
+		System.out.println("Percorrendo lista com foreach");
 		javaColecoes.getAlunos().forEach(aluno -> {
 			System.out.println(aluno);
 		});
+		
+		System.out.println("Percorrendo lista com Iterator");
+		Iterator<Aluno> iterador = javaColecoes.getAlunos().iterator();
+		while (iterador.hasNext()) {
+			Aluno aluno = iterador.next();
+			System.out.println(aluno);
+		}
 		
 		Aluno alunoGuilherme = new Aluno("Guilherme Silveira", 5617);
 		System.out.println(javaColecoes.estaMatriculado(alunoGuilherme));
