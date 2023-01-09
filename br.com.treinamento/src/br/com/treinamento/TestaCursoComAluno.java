@@ -14,13 +14,12 @@ public class TestaCursoComAluno {
 		Aluno aluno1 = new Aluno("Rodrigo Turini", 34672);
 		Aluno aluno2 = new Aluno("Guilherme Silveira", 5617);
 		Aluno aluno3 = new Aluno("Mauricio Aniche", 17645);
-		Aluno aluno4 = new Aluno("Paulo Silveira", 5426);
 
 		javaColecoes.matricular(aluno1);
 		javaColecoes.matricular(aluno2);
 		javaColecoes.matricular(aluno3);
 
-		Set<Aluno> alunos = javaColecoes.getAlunos();
+		//Set<Aluno> alunos = javaColecoes.getAlunos();
 		/*
 		 * alunos.add(aluno4);
 		 */
@@ -28,7 +27,10 @@ public class TestaCursoComAluno {
 		javaColecoes.getAlunos().forEach(aluno -> {
 			System.out.println(aluno);
 		});
-
+		
+		Aluno alunoGuilherme = new Aluno("Guilherme Silveira", 5617);
+		System.out.println(javaColecoes.estaMatriculado(alunoGuilherme));
+		System.out.println(aluno2.equals(alunoGuilherme));
 		/*
 		 * Se o curso estivesse cancelado, faria sentido ter uma lista destinada a ser
 		 * vazia em aulas 
